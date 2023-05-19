@@ -70,11 +70,11 @@ The first configuration file must be placed inside the folder **apache2/conf-ena
 WSGIDaemonProcess app_name processes=1 threads=25 python-home=/opt/path/to/your/app/venv
 WSGIScriptAlias /**url** /opt/path/to/your/app/**wsgi_file**
 
-<Directory /opt/organizer/>
+\<Directory /opt/organizer/>
     WSGIProcessGroup **app_name**
     WSGIApplicationGroup %{GLOBAL}
     Require all granted
-</Directory>
+\</Directory>
 
 </code>
 
@@ -84,13 +84,15 @@ WSGIScriptAlias /**url** /opt/path/to/your/app/**wsgi_file**
 **url** = the URL that you want it to be at, a single slash if the application should live at the root directory
 
 <code>
-<VirtualHost *>
+
+\<VirtualHost *>
     ServerName **server_name**
     WSGIScriptAlias /**url** /opt/path/to/your/app/**wsgi_file**
-    <Directory /opt/path/to/your/app>
+    \<Directory /opt/path/to/your/app>
         Order deny,allow
         Allow from all
-    </Directory>
-</VirtualHost>
+    \</Directory>
+\</VirtualHost>
+
 </code>
 
