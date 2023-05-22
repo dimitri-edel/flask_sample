@@ -18,6 +18,34 @@ os.environ.get({desired PORT},{default PORT})
 Furthermore, the code also provides a second parameter for a **default value** for the **IP** and the **PORT**, as a fallback strategy if the variables are **not defined** in the **environment of the Operating System**.
 
 ## Basic Structure
+### Folders
+**static** - used for storing folders with **CSS, JS and Images**
+**templates** - used for storing **HTML** files
+
+### Files
+**models.py** - Model Classes
+**routes.py** - @app.route annotations for HttpRequests and HttpResponse routing with corresponding view functions
+
+### Templating language cheat sheet
+#### Define or Insert block into a template
+<code>
+{% block block_name %} 
+// In base template leave this empty
+// In the actual template insert the code for this block here ..
+{% endblock %}
+{}
+</code>
+
+#### Use variables that have been passed to the view via render_template()
+Envelop the name of variable inside **double curly braces**
+<code>{{ name of variable }}</code>
+
+#### Linking a URL from the template
+Envelop the call to the **url_for()** function, which must be sitting inside a set of **double curly braces**
+<code>{{ url_for('url_name')}} </code>
+
+
+
 
 ## Apache2 Webserver Deployment
 ### Prepare App Folder
